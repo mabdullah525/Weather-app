@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            background: #f0f8ff;
+            /* Soft blue background */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 50px;
+            color: #0d47a1;
+        }
+
+        h4 {
+            font-size: 30px;
+            color: #1976d2;
+        }
+
+        input {
+            width: 100%;
+            height: 30px;
+            padding: 5px;
+            border: 2px solid #90caf9;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        button {
+            background-color: #1565c0;
+            color: white;
+            width: 100px;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0d47a1;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        #weatherImage {
+            margin-top: 20px;
+            width: 200px;
+            height: auto;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <div>
+            <div style="text-align: center;">
+                <h1>Weather App</h1>
+                <h4>Enter temperature in °C</h4>
+                <input type="text" id="temperature" name="°C" placeholder="°C"><br><br>
+                <button type="button" value="Check" onclick="checkWeather()">Check</button>
+                <p id="result"></p>
+                <img id="weatherImage">
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+
+        function checkWeather() {
+            let temp = document.getElementById("temperature").value;
+            let result = document.getElementById("result");
+            let weatherImage = document.getElementById("weatherImage");
+
+            if (temp >= 1 && temp < 20) {
+                result.innerHTML = "Cold Weather";
+                result.style.color = "blue";
+                weatherImage.src = "https://cdn-icons-png.flaticon.com/512/414/414974.png";
+                weatherImage.style.display = "block";
+            }
+            else if (temp >= 20 && temp < 35) {
+                result.innerHTML = "Mild Weather";
+                result.style.color = "green";
+                weatherImage.src = "https://cdn-icons-png.flaticon.com/512/1779/1779807.png";
+                weatherImage.style.display = "block";
+            }
+            else if (temp >= 35 && temp < 50) {
+                result.innerHTML = "Extremely Hot";
+                result.style.color = "red";
+                weatherImage.src = "https://cdn-icons-png.flaticon.com/512/869/869869.png";
+                weatherImage.style.display = "block";
+            }
+            else {
+                result.innerHTML = "Invalid temperature!";
+            }
+        }
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
