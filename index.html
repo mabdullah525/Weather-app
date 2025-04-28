@@ -8,7 +8,6 @@
     <style>
         body {
             background: #f0f8ff;
-            /* Soft blue background */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -47,7 +46,7 @@
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: 0.3s ease;
         }
 
         button:hover {
@@ -112,6 +111,8 @@
             }
             else {
                 result.innerHTML = "Invalid temperature!";
+                result.style.color = "black";
+                weatherImage.style.display = "none";
             }
         }
 
