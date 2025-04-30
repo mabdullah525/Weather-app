@@ -95,16 +95,17 @@
 
             if (temp == "") {
                 result.innerHTML = "Name must be filled out";
+                result.style.color = "green";
                 return;
 
             }
             if (isNaN(temp)) {
                 result.innerHTML = "Please enter a number";
-                result.style.color = "black";
+                result.style.color = "brown";
             }
             else {
 
-               if (temp >= -20 && temp < 1) {
+                if (temp >= -20 && temp < 1) {
                     result.innerHTML = "Freezing Weather";
                     result.style.color = "blue";
                     weatherImage.src = "https://cdn-icons-png.flaticon.com/512/6251/6251451.png";
