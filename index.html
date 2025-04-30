@@ -86,30 +86,58 @@
 
     <script>
 
+
         function checkWeather() {
             let temp = document.getElementById("temperature").value;
             let result = document.getElementById("result");
             let weatherImage = document.getElementById("weatherImage");
 
-            if (temp >= 1 && temp < 20) {
-                result.innerHTML = "Cold Weather";
-                result.style.color = "blue";
-                weatherImage.src = "https://cdn-icons-png.flaticon.com/512/414/414974.png";
-                weatherImage.style.display = "block";
+
+            if (temp == "") {
+                result.innerHTML = "Name must be filled out";
+                return;
+
             }
-            else if (temp >= 20 && temp < 35) {
-                result.innerHTML = "Mild Weather";
-                result.style.color = "green";
-                weatherImage.src = "https://cdn-icons-png.flaticon.com/512/1779/1779807.png";
-                weatherImage.style.display = "block";
+            if (isNaN(temp)) {
+                result.innerHTML = "Please enter a number";
+                result.style.color = "black";
             }
-            else if (temp >= 35 && temp < 50) {
-                result.innerHTML = "Extremely Hot";
-                result.style.color = "red";
-                weatherImage.src = "https://cdn-icons-png.flaticon.com/512/869/869869.png";
-                weatherImage.style.display = "block";
+            else {
+
+               if (temp >= -20 && temp < 1) {
+                    result.innerHTML = "Freezing Weather";
+                    result.style.color = "blue";
+                    weatherImage.src = "https://cdn-icons-png.flaticon.com/512/6251/6251451.png";
+                    weatherImage.style.display = "block";
+                }
+                else if (temp >= 1 && temp < 20) {
+                    result.innerHTML = "Cold Weather";
+                    result.style.color = "blue";
+                    weatherImage.src = "https://cdn-icons-png.flaticon.com/512/414/414974.png";
+                    weatherImage.style.display = "block";
+                }
+                else if (temp >= 20 && temp < 35) {
+                    result.innerHTML = "Mild Weather";
+                    result.style.color = "green";
+                    weatherImage.src = "https://cdn-icons-png.flaticon.com/512/1779/1779807.png";
+                    weatherImage.style.display = "block";
+                }
+                else if (temp >= 35 && temp < 50) {
+                    result.innerHTML = "Extremely Hot";
+                    result.style.color = "red";
+                    weatherImage.src = "https://cdn-icons-png.flaticon.com/512/869/869869.png";
+                    weatherImage.style.display = "block";
+                }
+                else if (temp >= 50) {
+                    result.innerHTML = "Unbearable Weather";
+                    result.style.color = "red";
+                    weatherImage.src = "https://cdn-icons-png.flaticon.com/512/5034/5034570.png";
+                    weatherImage.style.display = "block";
+                }
+
             }
         }
+
 
 
     </script>
